@@ -1,25 +1,36 @@
 import streamlit as st
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
+import leafmap.foliumap as leafmap
 
-st.title("Hello, Streamlit!")
-st.header("Getting Started")
-st.markdown("This is a simple Streamlit application.")
-st.write("Welcome to your first Streamlit app.")
 
-#data 
-# Generate 20 random [x, y] pairs
-data = [[np.random.random(), np.random.random()] for _ in range(20)]
+st.set_page_config(layout="wide")
 
-# Convert to DataFrame
-df = pd.DataFrame(data, columns=['x', 'y'])
+st.sidebar.info(
+    """
+    - Web App URL: <TBD>
+    - GitHub repository: <https://github.com/santos-andres/web-apps.git>
+    """
+)
 
-print(df)
-# with matplotlib
-fig, ax = plt.subplots()
-ax.hist(data, bins=15)
-st.pyplot(fig)
+st.sidebar.title("Contact")
+st.sidebar.info(
+    """
+    Andrés Santos
+    """
+)
 
-# with streamlit
-st.bar_chart(df)
+# Customize page title
+st.title("Streamlit for GIS Applications")
+
+st.markdown(
+    """
+    This multipage app template demonstrates various interactive web apps created using [streamlit](https://streamlit.io) and [leafmap](https://leafmap.org). 
+    Copied from an open-source project at [GitHub repository](https://github.com/giswqs/streamlit-multipage-template).
+    """
+)
+
+st.header("Maps")
+
+
+m = leafmap.Map(minimap_control=True)
+m.add_basemap("OpenTopoMap")
+m.to_streamlit(height=500)
