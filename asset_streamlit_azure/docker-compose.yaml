@@ -1,0 +1,8 @@
+services:
+  streamlit:
+    container_name: Cleaning-App
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+    ports:
+      - 5050
