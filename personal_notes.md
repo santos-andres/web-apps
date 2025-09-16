@@ -19,3 +19,7 @@ Updating the remote repository
 
 `git push origin master`
 
+### Docker 
+
+build docker image
+`docker build .`
