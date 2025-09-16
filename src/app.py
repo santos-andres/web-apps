@@ -27,6 +27,19 @@ st.markdown(
     Copied from an open-source project at [GitHub repository](https://github.com/giswqs/streamlit-multipage-template).
     """
 )
+st.header("Widgets")
+st.checkbox('yes')
+st.button('Click')
+st.radio('Pick your gender',['Male','Female'])
+st.selectbox('Pick your gender',['Male','Female'])
+st.multiselect('choose a planet',['Jupiter', 'Mars', 'Neptune'])
+st.slider('Pick a number', 0,50)
+
+st.number_input('Pick a number', 0,10)
+st.text_input('Email address')
+st.date_input('Travelling date')
+st.time_input('School time')
+st.file_uploader('Upload a photo')
 
 st.header("Maps")
 
