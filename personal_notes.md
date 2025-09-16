@@ -11,3 +11,10 @@ Copy files from another repository to my working directory
 
 Add files to index, for now I am using only `*` to add **everything**
 `git add * // to add everything`
+
+Commit files = Record changes to the repository (local)
+`git commit -m "Description message"`
+
+Updating the remote repository
+
+`git push origin master`
